@@ -1,6 +1,5 @@
 // Layout global
 //CAMBIAR PARA EXAMEN
-import Sidebar from '@/components/navigation/Sidebar';
 import '@/styles/globals.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -8,7 +7,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es">
       <body className="h-screen flex overflow-hidden">
         {/* Sidebar */}
-        <Sidebar />
 
         {/* Barra vertical separadora */}
         <div className="w-1 bg-gray-300"></div>
