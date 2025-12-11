@@ -1,18 +1,15 @@
-// Layout global
-//CAMBIAR PARA EXAMEN
-import '@/styles/globals.css';
+"use client";
+
+import { SessionProvider } from "next-auth/react";
+import "@/styles/globals.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className="h-screen flex overflow-hidden">
-        {/* Sidebar */}
-
-        {/* Barra vertical separadora */}
-        <div className="w-1 bg-gray-300"></div>
-
-        {/* Área principal de contenido */}
-        <main className="flex-1 p-6 overflow-auto min-h-0">{children}</main>
+      <body>
+        <SessionProvider>
+          {children}
+        </SessionProvider>
       </body>
     </html>
   );
