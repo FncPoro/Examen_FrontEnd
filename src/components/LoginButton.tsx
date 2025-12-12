@@ -18,11 +18,9 @@ export default function LoginButton() {
       </button>
     </div>
   ) : (
-    <button
-      onClick={() => signIn("google")}
-      className="bg-blue-500 text-white px-4 py-2"
-    >
-      Iniciar sesión con Google
-    </button>
+    <>
+    <button onClick={() => signIn("google")}>Entrar con Google</button>
+    <button onClick={() => signIn("github")}>Entrar con GitHub</button>
+    </>
   );
 }
