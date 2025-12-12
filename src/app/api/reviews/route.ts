@@ -1,4 +1,3 @@
-// src/app/api/reviews/route.ts
 import { NextResponse } from "next/server";
 import { connectToDB } from "@/lib/mongodb";
 import Review from "@/models/Review";
@@ -24,8 +23,8 @@ export async function POST(req: Request) {
       oauthToken: session.accessToken ?? null,
       tokenIssuedAt: (session as any).iat ?? Date.now(),
       tokenExpiresAt: (session as any).exp ?? Date.now() + 3600,
-      coords: body.coords || null, // <--- coords guardadas
-      images: body.images || [],
+      coords: body.coords || null, // <--- coords se guardan
+      images: body.images || [],   // <--- URLs de las imágenes
     };
 
     const newReview = await Review.create(reviewData);
