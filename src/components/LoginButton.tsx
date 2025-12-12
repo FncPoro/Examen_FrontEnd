@@ -19,8 +19,14 @@ export default function LoginButton() {
     </div>
   ) : (
     <>
-    <button onClick={() => signIn("google")}>Entrar con Google</button>
-    <button onClick={() => signIn("github")}>Entrar con GitHub</button>
+  <button
+    onClick={() =>
+      signIn("google", { callbackUrl: "/reviews" }) // <- ruta protegida de tu app
+    }
+  >
+    Entrar con Google
+  </button>
+    <button onClick={() => signIn("github")}>Entrar con GitHub </button>
     </>
   );
 }
